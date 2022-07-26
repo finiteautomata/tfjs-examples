@@ -1,3 +1,8 @@
+/**
+ * Power iteration example using tensorflow.js
+ * Author: Juan Manuel Pérez
+ */
+
 const tf = require('@tensorflow/tfjs');
 
 
@@ -5,7 +10,7 @@ const tf = require('@tensorflow/tfjs');
 
 // First, let's create a reflection matrix
 let D = tf.tensor([
-    [2.0, 0.0, 0.0],
+    [35.0, 0.0, 0.0],
     [0.0, 1.0, 0.0],
     [0.0, 0.0, 0.5]
 ]);
