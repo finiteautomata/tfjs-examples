@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "convert_to_tf"
+version = "0.1.0"
+description = ""
+authors = ["Juan Manuel Pérez <jmperez.85@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+keras = "^2.9.0"
+
+[tool.poetry.dev-dependencies]
+tensorflowjs = {extras = ["wizard"], version = "^3.19.0"}
+transformers = {extras = ["tf-cpu"], version = "^4.21.0"}
+notebook = "^6.4.12"
+jupyter = "^1.0.0"
+keras = "^2.9.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
