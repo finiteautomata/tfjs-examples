@@ -1,5 +1,6 @@
 const tf = require('@tensorflow/tfjs');
 const tfn = require("@tensorflow/tfjs-node");
+const repl = require('repl')
 let { Tokenizer } = require("tokenizers/bindings/tokenizer");
 let { promisify } = require('util');
 
@@ -39,15 +40,26 @@ const runNERTest = async () => {
     let attentionMask = tf.tensor(output.getAttentionMask(), undefined, "int32");
 
     let inputs = {
-        "input_ids": inputIds.reshape([1, -1]),
-        "attention_mask": attentionMask.reshape([1, -1]),
+        "input_ids": inputIds.reshape([-1, 1]),
+        "attention_mask": attentionMask.reshape([-1, 1]),
     }
     let model = await loadModel();
 
     console.log("Model loaded!");
+    console.log("Input shape");
+    console.log(model.signature.inputs["input_ids:0"].tensorShape)
+    console.log("Output shape");
+    console.log(model.signature.outputs.logits.tensorShape);
     let prediction = model.predict(inputs);
 
     console.log(prediction);
+    console.log(Object.keys(prediction));
+    console.log(JSON.stringify(prediction));
+
+    const r = repl.start()
+    r.context.prediction = prediction;
+    r.context.inputs = inputs;
+    r.context.model = model;
 }
 
 runNERTest()
