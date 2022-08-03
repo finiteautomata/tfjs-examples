@@ -19,6 +19,8 @@ model._set_inputs(tf.TensorSpec([1, 384], tf.int32))
 tf.saved_model.save(model, model_name +'_js')
 ```
 
+Check [this notebook](https://colab.research.google.com/drive/18cW5RCCBGYcYvh9BHfYbsmFoJElosqsc#scrollTo=6OWQR6wVD6EV) for more information.
+
 2. Use tfjs-converter to convert model to `tfjs_graph_model` format
 
 ```bash
@@ -33,4 +35,5 @@ tensorflowjs_converter  \
 
 ## Readings
 
-["Insiders of porting tokenizers to WASM"](https://blog.mithrilsecurity.io/porting-tokenizers-to-wasm/)
+["Insights of porting tokenizers to WASM"](https://blog.mithrilsecurity.io/porting-tokenizers-to-wasm/)
+["Transformers serialization to ONNX"](https://huggingface.co/docs/transformers/serialization)
