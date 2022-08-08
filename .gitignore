@@ -128,6 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-hf_model/convert_to_tf/*
+convert_to_tf/*
 
 *.bin
