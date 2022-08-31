@@ -27,7 +27,7 @@ Check [this notebook](https://colab.research.google.com/drive/18cW5RCCBGYcYvh9BH
 tensorflowjs_converter  \
     --input_format=tf_saved_model \
     --output_format=tfjs_graph_model\
-    input_dir output_dir
+    ner-leg ner-leg_js
 ```
 
 3. Run `load_model.js`
